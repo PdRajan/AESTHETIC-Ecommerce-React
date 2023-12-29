@@ -29,7 +29,9 @@ const HeaderBottom = () => {
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
+    setShowSearchBar(true);
   };
+
 
   useEffect(() => {
     const filtered = paginationItems.filter((item) =>
@@ -87,7 +89,7 @@ const HeaderBottom = () => {
               placeholder="Search your products here"
             />
             <FaSearch className="w-5 h-5" />
-            {searchQuery && (
+            {searchQuery && showSearchBar &&  (
               <div
                 className={`w-full mx-auto h-96 bg-white top-16 absolute left-0 z-50 overflow-y-scroll shadow-2xl scrollbar-hide cursor-pointer`}
               >
